@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TermViewActivity">
+
+    <TextView
+        android:id="@+id/TermViewTitle"
+        android:layout_width="302dp"
+        android:layout_height="53dp"
+        android:text="TextView"
+        android:textAppearance="@android:style/TextAppearance.Large"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <TextView
+        android:id="@+id/textview"
+        android:layout_width="112dp"
+        android:layout_height="34dp"
+        android:layout_below="@+id/TermViewTitle"
+        android:layout_alignParentStart="true"
+        android:text="Start Date" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="112dp"
+        android:layout_height="35dp"
+        android:layout_below="@+id/textview"
+        android:layout_alignParentStart="true"
+        android:text="End Date" />
+
+    <TextView
+        android:id="@+id/TermViewStartDate"
+        android:layout_width="190dp"
+        android:layout_height="35dp"
+        android:layout_below="@+id/TermViewTitle"
+        android:layout_toEndOf="@+id/textview"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/TermViewEndDate"
+        android:layout_width="190dp"
+        android:layout_height="35dp"
+        android:layout_below="@+id/textview"
+        android:layout_toEndOf="@+id/textview"
+        android:text="TextView" />
+
+    <Button
+        android:id="@+id/addCoursesButton"
+        android:layout_width="139dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="156dp"
+        android:onClick="openCourses"
+        android:text="@string/course_button" />
+
+    <Button
+        android:id="@+id/deleteTermButton"
+        android:layout_width="143dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="241dp"
+        android:layout_marginBottom="59dp"
+        android:onClick="deleteTermButton"
+        android:text="@string/delete_term_button" />
+
+    <Button
+        android:id="@+id/editCourseButton"
+        android:layout_width="155dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="62dp"
+        android:onClick="editTermButton"
+        android:text="@string/edit_term_button" />
+</RelativeLayout>

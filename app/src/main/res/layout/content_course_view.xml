@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".CourseViewActivity"
+    tools:showIn="@layout/activity_course_view">
+
+    <TextView
+        android:id="@+id/courseNameView"
+        android:layout_width="266dp"
+        android:layout_height="36dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="14dp"
+        android:text="Course Name"
+        android:textAppearance="@android:style/TextAppearance.Material.Large" />
+
+    <TextView
+        android:id="@+id/courseStartDate"
+        android:layout_width="114dp"
+        android:layout_height="29dp"
+        android:layout_below="@+id/courseNameView"
+        android:layout_alignParentStart="true"
+        android:text="Start Date" />
+
+    <TextView
+        android:id="@+id/courseEndDate"
+        android:layout_width="155dp"
+        android:layout_height="29dp"
+        android:layout_below="@+id/courseNameView"
+        android:layout_toEndOf="@+id/courseStartDate"
+        android:text="End Date" />
+
+    <Button
+        android:id="@+id/courseNotes"
+        android:layout_width="172dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="146dp"
+        android:onClick="openCourseNotes"
+        android:text="@string/notes_button" />
+
+    <Button
+        android:id="@+id/assessment"
+        android:layout_width="171dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/courseNotes"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="185dp"
+        android:layout_marginTop="-47dp"
+        android:text="@string/assessment_button" />
+
+    <TextView
+        android:id="@+id/courseStatus"
+        android:layout_width="93dp"
+        android:layout_height="35dp"
+        android:layout_below="@+id/courseStartDate"
+        android:layout_alignParentStart="true"
+        android:text="Planned" />
+
+    <Button
+        android:id="@+id/EditCourseButton"
+        android:layout_width="169dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="171dp"
+        android:onClick="editCourse"
+        android:text="@string/edit_course_button" />
+
+    <Button
+        android:id="@+id/DeleteCourse"
+        android:layout_width="184dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/assessment"
+        android:layout_alignBottom="@+id/EditCourseButton"
+        android:layout_marginBottom="0dp"
+        android:text="@string/delete_course_button" />
+</RelativeLayout>

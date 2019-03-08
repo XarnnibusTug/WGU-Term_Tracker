@@ -1,0 +1,61 @@
+<resources>
+    //Header String
+
+    <string name="app_name">Accelerator Tracker</string>
+
+    // Main Screen
+    <string name="view_term_list">View Term List</string>
+    <string name="logo_description">Wgu Logo</string>
+    <string name="welcome_text">Welcome to the WGU Accelerator, click View Term List to get Started</string>
+
+    // Term List Screen
+    <string name="term_view_text"> Select a Term below to edit, or select add New Term Button to create a new Term</string>
+    <string name="new_term_button">New Term</string>
+    <string name="term_list">Term List</string>
+
+    // Term Editor Screen
+    <string name="term_edit_welcome">Fill out term information below and click Save Term to save the term.</string>
+    <string name="add_new_term">Add New Term</string>
+    <string name="edit_term_title">Edit Term</string>
+    <string name="term_name_text">Term Name</string>
+    <string name="term_start_text">Term Start</string>
+    <string name="term_end_text">Term End</string>
+    <string name="save_term_button">Save Term</string>
+
+    //Term View Screen
+    <string name="course_button">Courses</string>
+    <string name="delete_term_button">Delete Term</string>
+    <string name="view_term">View Term</string>
+    <string name="edit_term_button">Edit Term</string>
+
+    //Courses List Screen
+    <string name="course_welcome_text">Select a Course below to edit, or select add Course button to create a new Course</string>
+    <string name="course_list"> Course List</string>
+    <string name="new_course_button">new Course</string>
+    <string name="courses">Courses</string>
+
+    //Course Edit Screen
+    <string name="course_edit_welcome">Fill out Course information below and click Save Course to save the course.</string>
+    <string name="course_name">Course Name</string>
+    <string name="course_start">Course Start</string>
+    <string name="course_end">Course End</string>
+    <string name="course_mentor">Course Mentor</string>
+    <string name="course_mentor_number">Mentor Number</string>
+    <string name="course_mentor_email">Mentor Email</string>
+    <string name="save_course_button">Save Course</string>
+    <string name="add_new_course">New Course</string>
+    <string name="edit_course_title">Edit Course</string>
+
+
+    //Course View Screen
+    <string name="notes_button">Course Notes</string>
+    <string name="assessment_button">Assessment</string>
+    <string name="edit_course_button">Edit Course</string>
+    <string name="delete_course_button">Delete Course</string>
+
+    //Toast Messages
+    <string name="term_saved">New Term Saved!</string>
+    <string name="term_updated"> Term Has been Updated</string>
+    <string name="term_deleted"> Term Has been Deleted</string>
+    <string name="title_activity_course_view">CourseViewActivity</string>
+</resources>
