@@ -58,6 +58,11 @@
     <string name="term_saved">New Term Saved!</string>
     <string name="term_updated"> Term Has been Updated</string>
     <string name="term_deleted"> Term Has been Deleted</string>
+    <string name="course_started">Course Started!</string>
+    <string name="course_dropped_message">Course Dropped!</string>
+    <string name="course_completed_message">Course Completed</string>
+    <string name="notificaitons_enabled">Notifications Enabled</string>
+    <string name="notificaitons_disabled">Notifications Disabled</string>
 
 
     //Course Viewer Menu
