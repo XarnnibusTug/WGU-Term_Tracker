@@ -52,10 +52,18 @@
     <string name="assessment_button">Assessment</string>
     <string name="edit_course_button">Edit Course</string>
     <string name="delete_course_button">Delete Course</string>
+    <string name="title_activity_course_view">CourseViewActivity</string>
 
     //Toast Messages
     <string name="term_saved">New Term Saved!</string>
     <string name="term_updated"> Term Has been Updated</string>
     <string name="term_deleted"> Term Has been Deleted</string>
-    <string name="title_activity_course_view">CourseViewActivity</string>
+
+
+    //Course Viewer Menu
+    <string name="enable_notifications">Enable Notifications</string>
+    <string name="disable_notifications">Disable Notifications</string>
+    <string name="start_course">Start Course</string>
+    <string name="mark_course_completed">Course Completed</string>
+    <string name="drop_course">Drop Course</string>
 </resources>
