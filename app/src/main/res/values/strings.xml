@@ -63,6 +63,7 @@
     <string name="course_completed_message">Course Completed</string>
     <string name="notificaitons_enabled">Notifications Enabled</string>
     <string name="notificaitons_disabled">Notifications Disabled</string>
+    <string name="course_deleted">Course Deleted</string>
 
 
     //Course Viewer Menu

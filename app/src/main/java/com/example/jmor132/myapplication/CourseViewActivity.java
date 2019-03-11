@@ -120,6 +120,13 @@ public class CourseViewActivity extends AppCompatActivity {
         startActivityForResult(intent, COURSE_EDITOR_ACTIVITY_CODE);
     }
 
+    public void deleteCourse(View view){
+        CourseDataManager.deleteCourse(CourseViewActivity.this, courseID);
+        setResult(RESULT_OK);
+        finish();
+        Toast.makeText(this, getString(R.string.course_deleted), Toast.LENGTH_LONG).show();
+    }
+
     public void openCourseNotes(View view){
         Intent intent = new Intent(CourseViewActivity.this, CourseNoteListActivity.class );
         Uri uri = Uri.parse(CourseProvider.COURSES_URI + "/" + courseID);

@@ -58,7 +58,18 @@ public class CourseDataManager {
     }
 
 
+    public static boolean deleteCourse(Context context, long courseID){
+        Cursor notesCursor = context.getContentResolver().query(CourseNotesProvider.COURSE_NOTES_URI,
+                                                                DBOpenHelper.COURSE_NOTES_COLUMNS,
+                                                                DBOpenHelper.COURSE_NOTE_COURSE_ID
+                                                                + "=" + courseID, null,null);
 
+        while(notesCursor.moveToNext()){
+            CourseNoteDataManager.deleteCourseNote(context, notesCursor.getLong(notesCursor.getColumnIndex(DBOpenHelper.COURSE_NOTES_TABLE_ID)));
+        }
+        context.getContentResolver().delete(CourseProvider.COURSES_URI, DBOpenHelper.COURSES_TABLE_ID + "=" + courseID, null);
+        return true;
+    }
    
 
 }

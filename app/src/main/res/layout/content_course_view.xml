@@ -81,5 +81,6 @@
         android:layout_alignStart="@+id/assessment"
         android:layout_alignBottom="@+id/EditCourseButton"
         android:layout_marginBottom="0dp"
+        android:onClick="deleteCourse"
         android:text="@string/delete_course_button" />
 </RelativeLayout>
