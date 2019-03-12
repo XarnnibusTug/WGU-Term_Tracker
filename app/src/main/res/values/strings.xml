@@ -72,4 +72,8 @@
     <string name="start_course">Start Course</string>
     <string name="mark_course_completed">Course Completed</string>
     <string name="drop_course">Drop Course</string>
+
+    //Course Note List
+    <string name = "course_note_welcome">Add a new Course Note Below</string>
+    <string name = "new_course_note">New course Note</string>
 </resources>
