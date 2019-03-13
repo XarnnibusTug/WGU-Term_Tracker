@@ -42,7 +42,8 @@
             android:name=".CourseViewActivity"
             android:label="@string/title_activity_course_view"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".CourseNoteListActivity"></activity>
+        <activity android:name=".CourseNoteListActivity" />
+        <activity android:name=".CourseNoteViewActivity"></activity>
     </application>
 
 </manifest>

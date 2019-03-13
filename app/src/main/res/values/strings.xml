@@ -74,6 +74,6 @@
     <string name="drop_course">Drop Course</string>
 
     //Course Note List
-    <string name = "course_note_welcome">Add a new Course Note Below</string>
-    <string name = "new_course_note">New course Note</string>
+    <string name="course_note_welcome">Add a new Course Note Below</string>
+    <string name="new_course_note">New course Note</string>
 </resources>
