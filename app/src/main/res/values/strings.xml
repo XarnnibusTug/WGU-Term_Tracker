@@ -76,4 +76,9 @@
     //Course Note List
     <string name="course_note_welcome">Add a new Course Note Below</string>
     <string name="new_course_note">New course Note</string>
+
+    //Course Note View
+    <string name="note_title">New Course Note</string>
+    /<string name="course_note_text">write a test note...</string>
+    <string name= "save_course_note">Save Note</string>
 </resources>

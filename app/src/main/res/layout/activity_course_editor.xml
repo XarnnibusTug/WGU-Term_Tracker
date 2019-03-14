@@ -35,6 +35,7 @@
             android:layout_column="1"
             android:layout_margin="8dp"
             android:ems="10"
+            android:hint="Course Name (EX C196)"
             android:inputType="text" />
 
         <TextView
@@ -89,6 +90,7 @@
             android:layout_row="3"
             android:layout_column="1"
             android:layout_margin="8dp"
+            android:hint="Jason Morrissette"
             android:inputType="text" />
 
         <TextView
@@ -107,6 +109,7 @@
             android:layout_row="4"
             android:layout_column="1"
             android:layout_margin="8dp"
+            android:hint="555-555-5555"
             android:inputType="phone" />
 
         <TextView
@@ -125,6 +128,7 @@
             android:layout_row="5"
             android:layout_column="1"
             android:layout_margin="8dp"
+            android:hint="jmorrissette@awesomeapp.com"
             android:inputType="textWebEmailAddress" />
 
     </GridLayout>

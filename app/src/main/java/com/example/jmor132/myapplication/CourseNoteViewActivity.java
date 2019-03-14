@@ -5,6 +5,8 @@ import android.os.Bundle;
 
 public class CourseNoteViewActivity extends AppCompatActivity {
 
+    private static final int COURSE_NOTE_EDITOR_CODE = 11111;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

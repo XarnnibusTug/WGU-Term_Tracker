@@ -14,7 +14,6 @@ import android.widget.CursorAdapter;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 
-import java.net.Inet4Address;
 
 public class CourseNoteListActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor>{
 
@@ -32,6 +31,7 @@ public class CourseNoteListActivity extends AppCompatActivity implements LoaderM
 
         courseUri = getIntent().getParcelableExtra(CourseProvider.COURSE_CONTENT_TYPE);
         courseID = Long.parseLong(courseUri.getLastPathSegment());
+        generateCourseNoteList();
 
     }
 

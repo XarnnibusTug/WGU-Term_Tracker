@@ -29,13 +29,21 @@ public class TermsListActivity extends AppCompatActivity implements LoaderManage
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_terms_list);
 
+        generateTermsList();
+        getLoaderManager().initLoader(0, null,  this);
+
+
+    }
+
+    public void generateTermsList(){
+
         String[] from = {DBOpenHelper.TERM_NAME, DBOpenHelper.TERM_START, DBOpenHelper.TERM_END};
         int[] to ={R.id.termName, R.id.termStart, R.id.termEnd};
 
         cursorAdapter = new SimpleCursorAdapter(this, R.layout.term_list_item, null, from , to, 0);
         database = new TermProvider();
 
-        ListView termList = (ListView) findViewById(android.R.id.list);
+        ListView termList = findViewById(android.R.id.list);
         termList.setAdapter(cursorAdapter);
 
         termList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -47,11 +55,7 @@ public class TermsListActivity extends AppCompatActivity implements LoaderManage
                 startActivityForResult(intent, TERM_VIEWER_ACTIVITY_CODE);
             }
         });
-        getLoaderManager().initLoader(0, null,  this);
-
-
     }
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data){
         super.onActivityResult(requestCode, resultCode, data);
