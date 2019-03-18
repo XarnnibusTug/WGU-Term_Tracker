@@ -1,25 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/editNoteButton"
-        android:layout_width="383dp"
-        android:layout_height="wrap_content"
-        android:text="Button"
+    <TextView
+        android:id="@+id/courseNoteText"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="Course Note Goes here"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="461dp" />
-
-    <EditText
-        android:id="@+id/editText2"
-        android:layout_width="390dp"
-        android:layout_height="177dp"
-        android:ems="10"
-        android:hint="Note Text"
-        android:inputType="textPersonName"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="109dp" />
-</android.support.constraint.ConstraintLayout>
+        tools:layout_editor_absoluteY="0dp" />
+</RelativeLayout>

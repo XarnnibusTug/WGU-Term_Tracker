@@ -86,6 +86,7 @@ public class CourseViewActivity extends AppCompatActivity {
         return true;
     }
 
+    // Menu Items
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
         int id = item.getItemId();

@@ -77,8 +77,16 @@
     <string name="course_note_welcome">Add a new Course Note Below</string>
     <string name="new_course_note">New course Note</string>
 
+    //Course Note Edit
+    <string name ="add_new_note">Add new Course Note</string>
+    <string name ="save_course_note">Save Note</string>
     //Course Note View
     <string name="note_title">New Course Note</string>
-    /<string name="course_note_text">write a test note...</string>
-    <string name= "save_course_note">Save Note</string>
+    <string name="course_note_text">write a test note...</string>
+    <string name= "edit_course_note">Edit Note</string>
+    <string name= "delete_course_note">Delete Note</string>
+    <string name= "course_note_title">Course Note</string>
+
+
+
 </resources>

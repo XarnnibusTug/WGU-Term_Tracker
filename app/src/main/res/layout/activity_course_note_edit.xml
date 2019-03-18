@@ -13,6 +13,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="14dp"
+        android:onClick="saveCourseNote"
         android:text="@string/save_course_note" />
 
     <TextView
@@ -27,13 +28,13 @@
         android:textAppearance="@android:style/TextAppearance.Material.Large" />
 
     <EditText
-        android:id="@+id/editText"
-        android:layout_width="352dp"
-        android:layout_height="297dp"
+        android:id="@+id/courseNoteEdit"
+        android:layout_width="match_parent"
+        android:layout_height="327dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="0dp"
-        android:layout_marginTop="107dp"
+        android:layout_marginTop="111dp"
         android:ems="10"
         android:hint="Enter Note Text.."
         android:inputType="textMultiLine" />
