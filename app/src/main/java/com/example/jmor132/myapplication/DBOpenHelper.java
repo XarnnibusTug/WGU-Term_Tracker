@@ -90,6 +90,36 @@ public class DBOpenHelper extends SQLiteOpenHelper {
                     ")";
 
 
+    //Assessment Table
+
+    public static final String TABLE_ASSESSMENTS = "assessments";
+    public static final String ASSESSMENT_TABLE_ID = "_id";
+    public static final String ASSESSMENT_COURSE_ID = "assessmentCourseId";
+    public static final String ASSESSMENT_CODE = "assessmentCode";
+    public static final String ASSESSMENT_NAME = "assessmentName";
+    public static final String ASSESSMENT_DESCRIPTION ="assessmentDescription";
+    public static final String ASSESSMENT_DATETIME = "assessmentDateTime";
+    public static final String ASSESSMENT_NOTIFICATIONS= "assessmentNotifications";
+    public static final String ASSESSMENT_CREATED = "assessmentCreated";
+    public static final String[] ASSESSMENT_COLUMNS = {ASSESSMENT_TABLE_ID, ASSESSMENT_COURSE_ID, ASSESSMENT_CODE, ASSESSMENT_NAME,
+                                                        ASSESSMENT_DESCRIPTION, ASSESSMENT_NOTIFICATIONS, ASSESSMENT_DATETIME, ASSESSMENT_CREATED};
+
+
+    //Assessments Table
+    private static final String ASSESSMENT_TABLE_CREATE =
+            "CREATE TABLE IF NOT EXISTS " + TABLE_ASSESSMENTS + "(" +
+                    ASSESSMENT_TABLE_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                    ASSESSMENT_COURSE_ID + " INTEGER, " +
+                    ASSESSMENT_NAME + " TEXT, " +
+                    ASSESSMENT_DESCRIPTION + " TEXT, " +
+                    ASSESSMENT_CODE + " TEXT, " +
+                    ASSESSMENT_DATETIME + " TEXT, " +
+                    ASSESSMENT_NOTIFICATIONS + " INTEGER, " +
+                    ASSESSMENT_CREATED + " TEXT default CURRENT_TIMESTAMP, " +
+                    "FOREIGN KEY(" + ASSESSMENT_COURSE_ID + ") REFERENCES " + TABLE_COURSES + "(" + COURSES_TABLE_ID + ")" +
+                    "0";
+
+
     public DBOpenHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
@@ -100,6 +130,7 @@ public class DBOpenHelper extends SQLiteOpenHelper {
         database.execSQL(TERMS_TABLE_CREATE);
         database.execSQL(COURSES_TABLE_CREATE);
         database.execSQL(COURSE_NOTES_TABLE_CREATE);
+        database.execSQL(ASSESSMENT_TABLE_CREATE);
 
     }
 
@@ -108,6 +139,7 @@ public class DBOpenHelper extends SQLiteOpenHelper {
         database.execSQL("DROP TABLE IF EXISTS " + TABLE_TERMS);
         database.execSQL("DROP TABLE IF EXISTS " + TABLE_COURSES);
         database.execSQL("DROP TABLE IF EXISTS " + TABLE_COURSE_NOTES);
+        database.execSQL("DROP TABLE IF EXISTS" + TABLE_ASSESSMENTS);
         onCreate(database);
     }
 }
