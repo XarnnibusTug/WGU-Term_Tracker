@@ -20,7 +20,7 @@ public class CourseNoteDataManager {
                                                             DBOpenHelper.COURSE_NOTES_TABLE_ID + " = " + courseNoteID, null, null);
 
         cursor.moveToFirst();
-        Long courseID = cursor.getLong(cursor.getColumnIndex(DBOpenHelper.COURSE_NOTE_COURSE_ID));
+        long courseID = cursor.getLong(cursor.getColumnIndex(DBOpenHelper.COURSE_NOTE_COURSE_ID));
         String text = cursor.getString(cursor.getColumnIndex(DBOpenHelper.COURSE_NOTE_TEXT));
 
         CourseNote courseNote = new CourseNote();

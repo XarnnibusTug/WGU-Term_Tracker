@@ -6,16 +6,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class CourseNoteEdit extends AppCompatActivity {
 
     private long courseID;
     private Uri courseUri;
-    private long courseNoteId;
+    private long courseNoteID;
     private Uri courseNoteUri;
     private CourseNote courseNote;
     private EditText noteText;
     private String action;
+    private TextView title;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +35,8 @@ public class CourseNoteEdit extends AppCompatActivity {
         }
         else {
             setTitle(getString(R.string.edit_course_note));
-            courseNote = CourseNoteDataManager.getCourseNote(this, courseNoteId);
+            courseNoteID = Long.parseLong(courseNoteUri.getLastPathSegment());
+            courseNote = CourseNoteDataManager.getCourseNote(this, courseNoteID);
             courseID = courseNote.courseID;
             noteText.setText(courseNote.text);
             action = Intent.ACTION_EDIT;

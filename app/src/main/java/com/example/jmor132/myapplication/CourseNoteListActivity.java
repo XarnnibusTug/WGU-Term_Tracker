@@ -33,6 +33,8 @@ public class CourseNoteListActivity extends AppCompatActivity implements LoaderM
         courseID = Long.parseLong(courseUri.getLastPathSegment());
         generateCourseNoteList();
 
+        getLoaderManager().initLoader(0,null,this);
+
     }
 
 
