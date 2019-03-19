@@ -64,6 +64,8 @@
     <string name="notificaitons_enabled">Notifications Enabled</string>
     <string name="notificaitons_disabled">Notifications Disabled</string>
     <string name="course_deleted">Course Deleted</string>
+    <string name="courseNote_deleted">Course Note Deleted</string>
+    <string name="courseNote_edit">Course Edited</string>
 
 
     //Course Viewer Menu
@@ -80,12 +82,14 @@
     //Course Note Edit
     <string name ="add_new_note">Add new Course Note</string>
     <string name ="save_course_note">Save Note</string>
+
     //Course Note View
     <string name="note_title">New Course Note</string>
     <string name="course_note_text">write a test note...</string>
     <string name= "edit_course_note">Edit Note</string>
     <string name= "delete_course_note">Delete Note</string>
     <string name= "course_note_title">Course Note</string>
+
 
 
 

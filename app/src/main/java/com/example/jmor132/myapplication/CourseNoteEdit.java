@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class CourseNoteEdit extends AppCompatActivity {
 
@@ -17,7 +18,7 @@ public class CourseNoteEdit extends AppCompatActivity {
     private CourseNote courseNote;
     private EditText noteText;
     private String action;
-    private TextView title;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +41,7 @@ public class CourseNoteEdit extends AppCompatActivity {
             courseID = courseNote.courseID;
             noteText.setText(courseNote.text);
             action = Intent.ACTION_EDIT;
+            Toast.makeText(CourseNoteEdit.this, getString(R.string.courseNote_edit), Toast.LENGTH_LONG).show();
         }
     }
 

@@ -8,6 +8,7 @@ import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.ShareActionProvider;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class CourseNoteViewActivity extends AppCompatActivity {
 
@@ -46,5 +47,12 @@ public class CourseNoteViewActivity extends AppCompatActivity {
         intent.putExtra(CourseNotesProvider.COURSE_NOTE_CONTENT_TYPE, courseNoteUri);
         startActivityForResult(intent, COURSE_NOTE_EDITOR_CODE);
 
+    }
+
+    public void deleteNote(View view){
+        CourseNoteDataManager.deleteCourseNote(CourseNoteViewActivity.this, courseNoteID);
+        setResult(RESULT_OK);
+        finish();
+        Toast.makeText(CourseNoteViewActivity.this, getString(R.string.courseNote_deleted), Toast.LENGTH_LONG).show();
     }
 }
