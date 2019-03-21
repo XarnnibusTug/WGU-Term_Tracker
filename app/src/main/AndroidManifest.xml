@@ -21,10 +21,16 @@
             android:name=".CourseProvider"
             android:authorities="com.example.jmor123.myapplication.CourseProvider"
             android:exported="true" />
+
         <!-- Course Note Provider -->
         <provider
             android:name=".CourseNotesProvider"
             android:authorities="com.example.jmor123.myapplication.CourseNotesProvider"
+            android:exported="true" />
+        <!-- Assessment Provider -->
+        <provider
+            android:name=".AssessmentProvider"
+            android:authorities="com.example.jmor123.myapplication.AssessmentProvider"
             android:exported="true" />
 
         <activity android:name=".MainActivity">
