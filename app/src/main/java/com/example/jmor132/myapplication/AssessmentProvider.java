@@ -27,6 +27,7 @@ public class AssessmentProvider extends ContentProvider {
         uriMatcher.addURI(AUTHORITY,ASSESSMENT_PATH + "/#", ASSESSMENT_ID);
     }
 
+    public static final String ASSESSMENT_CONTENT_TYPE = "assessment";
     private SQLiteDatabase database;
 
     @Override
@@ -40,7 +41,8 @@ public class AssessmentProvider extends ContentProvider {
     public Cursor query(Uri uri, String[] projection, String selection,  String[] selectionArgs, String sortOrder) {
         switch(uriMatcher.match(uri)){
             case ASSESSMENT:
-                return database.query(DBOpenHelper.TABLE_ASSESSMENTS, DBOpenHelper.ASSESSMENT_COLUMNS, selection, null, null, null, DBOpenHelper.ASSESSMENT_TABLE_ID + " ASC");
+                return database.query(DBOpenHelper.TABLE_ASSESSMENTS, DBOpenHelper.ASSESSMENT_COLUMNS,
+                              selection, null, null, null, DBOpenHelper.ASSESSMENT_TABLE_ID + " ASC");
                 default:
                     throw new IllegalArgumentException("Unsupported URI: " + uri);
         }
@@ -75,6 +77,11 @@ public class AssessmentProvider extends ContentProvider {
 
     @Override
     public int update(Uri uri, ContentValues values, String selection, String[] selectionArgs) {
-        return 0;
+        switch(uriMatcher.match(uri)){
+            case ASSESSMENT:
+                return database.update(DBOpenHelper.TABLE_ASSESSMENTS, values, selection, selectionArgs);
+            default:
+                throw new IllegalArgumentException("Unsupported URI: " + uri);
+        }
     }
 }

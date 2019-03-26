@@ -117,7 +117,7 @@ public class DBOpenHelper extends SQLiteOpenHelper {
                     ASSESSMENT_NOTIFICATIONS + " INTEGER, " +
                     ASSESSMENT_CREATED + " TEXT default CURRENT_TIMESTAMP, " +
                     "FOREIGN KEY(" + ASSESSMENT_COURSE_ID + ") REFERENCES " + TABLE_COURSES + "(" + COURSES_TABLE_ID + ")" +
-                    "0";
+                    ")";
 
 
     public DBOpenHelper(Context context) {
@@ -139,7 +139,7 @@ public class DBOpenHelper extends SQLiteOpenHelper {
         database.execSQL("DROP TABLE IF EXISTS " + TABLE_TERMS);
         database.execSQL("DROP TABLE IF EXISTS " + TABLE_COURSES);
         database.execSQL("DROP TABLE IF EXISTS " + TABLE_COURSE_NOTES);
-        database.execSQL("DROP TABLE IF EXISTS" + TABLE_ASSESSMENTS);
+        database.execSQL("DROP TABLE IF EXISTS " + TABLE_ASSESSMENTS);
         onCreate(database);
     }
 }

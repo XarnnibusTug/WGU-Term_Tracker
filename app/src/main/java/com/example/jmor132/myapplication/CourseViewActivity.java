@@ -135,6 +135,13 @@ public class CourseViewActivity extends AppCompatActivity {
         startActivityForResult(intent, COURSE_NOTE_LIST_ACTIVITY_CODE);
     }
 
+    public void openAssessments(View view){
+        Intent intent = new Intent(CourseViewActivity.this, AssessmentListActivity.class);
+        Uri uri = Uri.parse(CourseProvider.COURSES_URI + "/" + courseID);
+        intent.putExtra(CourseProvider.COURSE_CONTENT_TYPE, uri);
+        startActivityForResult(intent, ASSESSMENT_LIST_ADCTIVITY_CODE);
+    }
+
     private boolean enableNotifications(){
         Toast.makeText(this, getString(R.string.notificaitons_enabled), Toast.LENGTH_SHORT).show();
         return true;
