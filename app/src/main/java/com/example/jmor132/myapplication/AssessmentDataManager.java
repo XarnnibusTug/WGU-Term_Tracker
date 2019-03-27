@@ -9,7 +9,7 @@ import android.net.Uri;
 public class AssessmentDataManager {
 
 
-    public static Uri InsertAssessment(Context context, long courseID, String assessmentCode, String assessmentName, String assessmentDescription, String dateTime){
+    public static Uri insertAssessment(Context context, long courseID, String assessmentCode, String assessmentName, String assessmentDescription, String dateTime){
 
         ContentValues values = new ContentValues();
         values.put(DBOpenHelper.ASSESSMENT_COURSE_ID, courseID);

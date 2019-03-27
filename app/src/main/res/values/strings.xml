@@ -66,6 +66,7 @@
     <string name="course_deleted">Course Deleted</string>
     <string name="courseNote_deleted">Course Note Deleted</string>
     <string name="courseNote_edit">Course Edited</string>
+    <string name="assessment_deleted">Assessment Deleted!</string>
 
 
     //Course Viewer Menu
@@ -96,4 +97,12 @@
     <string name="new_assessment_button">Add Assessment</string>
 
 
+    //Assessment View
+    <string name="edit_assessment_button">Edit Assessment</string>
+    <string name="delete_assessment_button">Delete Assessment</string>
+
+    //Assessment Edit
+    <string name="save_assessment_button">Save Assessment</string>
+    <string name="new_assessment">New Assessment</string>
+    <string name="edit_assessment">Edit Assessment</string>
 </resources>
