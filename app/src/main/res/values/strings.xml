@@ -90,6 +90,7 @@
     <string name="edit_course_note">Edit Note</string>
     <string name="delete_course_note">Delete Note</string>
     <string name="course_note_title">Course Note</string>
+    <string name="share_note">Share Note</string>
 
 
     //Assessment List View
@@ -105,4 +106,5 @@
     <string name="save_assessment_button">Save Assessment</string>
     <string name="new_assessment">New Assessment</string>
     <string name="edit_assessment">Edit Assessment</string>
+    <string name="title_activity_assessment_view">AssessmentViewActivity</string>
 </resources>

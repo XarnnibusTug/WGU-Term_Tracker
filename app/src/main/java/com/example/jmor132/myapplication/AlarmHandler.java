@@ -55,7 +55,17 @@ public class AlarmHandler extends BroadcastReceiver {
                     return;
                 }
                 break;
-                //add assessement
+            case "assessment":
+                Assessment assessment = AssessmentDataManager.getAssessment(context, id);
+                if(assessment != null && assessment.notifications == 1){
+                    resultIntent = new Intent(context, AssessmentViewActivity.class);
+                    uri = Uri.parse(AssessmentProvider.ASSESSMENT_URI + "/" + id);
+                    resultIntent.putExtra(AssessmentProvider.ASSESSMENT_CONTENT_TYPE, uri);
+                }
+                else {
+                    return;
+                }
+                break;
 
             default:
                 resultIntent = new Intent(context, MainActivity.class);
@@ -86,6 +96,26 @@ public class AlarmHandler extends BroadcastReceiver {
         alarmManager.set(AlarmManager.RTC_WAKEUP, time, PendingIntent.getBroadcast(context, nextAlarmID, intentAlarm, PendingIntent.FLAG_ONE_SHOT));
 
         SharedPreferences sharedPreferences = context.getSharedPreferences(courseAlarm, context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putInt(Long.toString(id), nextAlarmID);
+        editor.commit();
+
+        addNextAlarmId(context);
+        return true;
+    }
+
+    public static boolean assessmentAlarm(Context context, int id, long time, String title, String text ){
+        AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
+        int nextAlarmID = getNextAlarmID(context);
+        Intent intentAlarm = new Intent(context, AlarmHandler.class);
+        intentAlarm.putExtra("id", id);
+        intentAlarm.putExtra("title", title);
+        intentAlarm.putExtra("text", text);
+        intentAlarm.putExtra("destination", "assessment");
+        intentAlarm.putExtra("nextAlarmID", nextAlarmID);
+        alarmManager.set(AlarmManager.RTC_WAKEUP, time, PendingIntent.getBroadcast(context, 1, intentAlarm, PendingIntent.FLAG_UPDATE_CURRENT));
+
+        SharedPreferences sharedPreferences = context.getSharedPreferences(assessmentAlarm, context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putInt(Long.toString(id), nextAlarmID);
         editor.commit();

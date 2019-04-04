@@ -53,8 +53,11 @@
         <activity android:name=".CourseNoteViewActivity" />
         <activity android:name=".CourseNoteEdit" />
         <activity android:name=".AssessmentListActivity" />
-        <activity android:name=".AssessmentViewActivity" />
-        <activity android:name=".AssessmentEdit"></activity>
+        <activity android:name=".AssessmentEdit" />
+        <activity
+            android:name=".AssessmentViewActivity"
+            android:label="@string/title_activity_assessment_view"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

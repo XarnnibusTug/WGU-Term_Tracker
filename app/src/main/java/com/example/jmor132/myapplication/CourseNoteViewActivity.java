@@ -18,6 +18,7 @@ public class CourseNoteViewActivity extends AppCompatActivity {
     private long courseNoteID;
     private Uri courseNoteUri;
     private TextView courseNoteText;
+    String courseNote;
 
 
 
@@ -54,5 +55,15 @@ public class CourseNoteViewActivity extends AppCompatActivity {
         setResult(RESULT_OK);
         finish();
         Toast.makeText(CourseNoteViewActivity.this, getString(R.string.courseNote_deleted), Toast.LENGTH_LONG).show();
+    }
+
+    public void shareNote(View view){
+        courseNote = courseNoteText.getText().toString();
+
+        Intent sendIntent = new Intent();
+        sendIntent.setAction(Intent.ACTION_SEND);
+        sendIntent.putExtra(Intent.EXTRA_SUBJECT, courseNote);
+        sendIntent.setType("text/plain");
+        startActivity(sendIntent);
     }
 }

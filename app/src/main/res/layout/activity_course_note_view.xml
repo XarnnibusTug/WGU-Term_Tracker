@@ -10,7 +10,7 @@
     <TextView
         android:id="@+id/courseNoteText"
         android:layout_width="match_parent"
-        android:layout_height="316dp"
+        android:layout_height="253dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
@@ -39,5 +39,14 @@
         android:layout_marginBottom="18dp"
         android:onClick="editNote"
         android:text="@string/edit_course_note" />
+
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="125dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/courseNoteText"
+        android:layout_alignParentStart="true"
+        android:onClick="shareNote"
+        android:text="@string/share_note" />
 
 </RelativeLayout>
