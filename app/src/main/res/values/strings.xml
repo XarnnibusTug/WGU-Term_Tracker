@@ -58,6 +58,7 @@
     <string name="term_saved">New Term Saved!</string>
     <string name="term_updated"> Term Has been Updated</string>
     <string name="term_deleted"> Term Has been Deleted</string>
+    <string name="courseAttached"> Course is attached, please delete courses first.</string>
     <string name="course_started">Course Started!</string>
     <string name="course_dropped_message">Course Dropped!</string>
     <string name="course_completed_message">Course Completed</string>

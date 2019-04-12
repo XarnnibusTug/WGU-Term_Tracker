@@ -75,10 +75,17 @@ public class TermViewActivity extends AppCompatActivity {
     }
 
     public void deleteTermButton(View view){
-        getContentResolver().delete(TermProvider.TERMS_URI, DBOpenHelper.TERMS_TABLE_ID + " = " + termID, null);
-        Toast.makeText(TermViewActivity.this, getString(R.string.term_deleted), Toast.LENGTH_LONG).show();
-        setResult(RESULT_OK);
-        finish();
+        long classCount = term.getClassCount(TermViewActivity.this);
+        if(classCount == 0) {
+            getContentResolver().delete(TermProvider.TERMS_URI, DBOpenHelper.TERMS_TABLE_ID + " = " + termID, null);
+            Toast.makeText(TermViewActivity.this, getString(R.string.term_deleted), Toast.LENGTH_LONG).show();
+            setResult(RESULT_OK);
+            finish();
+        }
+        else {
+            Toast.makeText(TermViewActivity.this, getString(R.string.courseAttached), Toast.LENGTH_LONG).show();
+        }
+
     }
 
     public void openCourses(View view){
