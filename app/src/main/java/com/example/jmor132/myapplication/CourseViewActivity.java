@@ -1,9 +1,12 @@
 package com.example.jmor132.myapplication;
 
+import android.annotation.TargetApi;
+import android.app.AlarmManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -17,6 +20,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import org.w3c.dom.Text;
+
+import java.util.Date;
 
 public class CourseViewActivity extends AppCompatActivity {
 
@@ -89,6 +94,7 @@ public class CourseViewActivity extends AppCompatActivity {
     // Menu Items
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
+
         int id = item.getItemId();
         switch(id){
             case R.id.action_enable_notifications:
@@ -142,7 +148,40 @@ public class CourseViewActivity extends AppCompatActivity {
         startActivityForResult(intent, ASSESSMENT_LIST_ADCTIVITY_CODE);
     }
 
+    @TargetApi(Build.VERSION_CODES.N)
     private boolean enableNotifications(){
+        long now = DateUtil.todayLong();
+
+        if(now <= DateUtil.getDateTimestamp(course.courseStart)){
+            AlarmHandler.courseAlarm(getApplicationContext(), courseID, DateUtil.getDateTimestamp(course.courseStart),
+                    "Course Starts Today!", course.courseName + "beings on " + course.courseStart);
+        }
+        if(now <= DateUtil.getDateTimestamp(course.courseStart) - 3 * 24 * 60 * 60 * 1000){
+            AlarmHandler.courseAlarm(getApplicationContext(), courseID, DateUtil.getDateTimestamp(course.courseStart),
+                    "Course Starts in three days!", course.courseName + " begins on " + course.courseStart);
+        }
+        if(now <= DateUtil.getDateTimestamp(course.courseStart) - 21 * 24 * 60 * 60 * 1000){
+            AlarmHandler.courseAlarm(getApplicationContext(), courseID, DateUtil.getDateTimestamp(course.courseStart),
+                    "Course Ends today!", course.courseName + " begins on" + course.courseStart);
+        }
+        if (now <= DateUtil.getDateTimestamp(course.courseEnd)){
+            AlarmHandler.courseAlarm(getApplicationContext(), courseID, DateUtil.getDateTimestamp(course.courseEnd),
+                    "Course ends Today!", course.courseName + " ends on " + course.courseStart);
+        }
+        if(now <= DateUtil.getDateTimestamp(course.courseEnd) - 3 * 24 * 60 * 60 * 1000){
+            AlarmHandler.courseAlarm(getApplicationContext(), courseID, DateUtil.getDateTimestamp(course.courseEnd),
+                    "Course ends in three days!", course.courseName + "ends on " + course.courseStart);
+        }
+        if(now <= DateUtil.getDateTimestamp(course.courseEnd) - 21 * 24 * 60 * 60 * 1000) {
+            AlarmHandler.courseAlarm(getApplicationContext(), courseID, DateUtil.getDateTimestamp(course.courseEnd),
+                    "Course ends in 3 weeeks!", course.courseName + " ends on " + course.courseStart);
+        }
+
+
+        course.notifications = 1;
+        course.saveChange(this);
+
+        SharedPreferences sharedPreferences = getSharedPreferences(AlarmHandler.courseAlarm, Context.MODE_PRIVATE);
         Toast.makeText(this, getString(R.string.notificaitons_enabled), Toast.LENGTH_SHORT).show();
         return true;
     }

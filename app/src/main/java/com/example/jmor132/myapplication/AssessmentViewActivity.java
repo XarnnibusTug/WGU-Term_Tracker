@@ -1,8 +1,11 @@
 package com.example.jmor132.myapplication;
 
+import android.annotation.TargetApi;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -13,6 +16,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.Date;
 
 public class AssessmentViewActivity extends AppCompatActivity {
     private static final int ASSESSMENT_EDITOR_ACTIVITY_CODE = 11111;
@@ -83,11 +88,33 @@ public class AssessmentViewActivity extends AppCompatActivity {
         }
     }
 
+
+    @TargetApi(Build.VERSION_CODES.N)
     private boolean enableNotifications(){
+        long now = DateUtil.todayLong();
+
+        AlarmHandler.assessmentAlarm(getApplicationContext(), (int) assessmentID, System.currentTimeMillis() + 1000, "Assessment is Today!",
+                                    assessment.assessmentName + "Starts" + assessment.dateTime);
+        if(now <= DateUtil.getDateTimestamp(assessment.dateTime)){
+            AlarmHandler.assessmentAlarm(getApplicationContext(),(int) assessmentID, DateUtil.getDateTimestamp(assessment.dateTime),  "Assessment Is today" ,
+                                                                    assessment.assessmentName + "Starts" + assessment.dateTime);
+        }
+        if (now <= DateUtil.getDateTimestamp(assessment.dateTime)- 3 * 24 * 60 * 60 * 1000){
+            AlarmHandler.assessmentAlarm(getApplicationContext(), (int) assessmentID, DateUtil.getDateTimestamp(assessment.dateTime), "Assessment is in 3 days!" ,
+                                                                            assessment.assessmentName + "Starts" + assessment.dateTime);
+        }
+        if (now <= DateUtil.getDateTimestamp(assessment.dateTime) - 21 * 24 * 60 * 60 * 1000){
+            AlarmHandler.assessmentAlarm(getApplicationContext(), (int) assessmentID, DateUtil.getDateTimestamp(assessment.dateTime), "Assessment is in 3 weeks",
+                                                                                    assessment.assessmentName + "Starts" + assessment.dateTime);
+        }
+        assessment.notifications = 1;
+        assessment.saveChanges(this);
         return true;
     }
 
     private boolean disableNotficiations(){
+        assessment.notifications = 0;
+        assessment.saveChanges(this);
         return true;
     }
 
