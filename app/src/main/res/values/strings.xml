@@ -5,6 +5,7 @@
 
     // Main Screen
     <string name="view_term_list">View Term List</string>
+    <string name="current_term">Current Term</string>
     <string name="logo_description">Wgu Logo</string>
     <string name="welcome_text">Welcome to the WGU Accelerator, click View Term List to get Started</string>
 
@@ -24,6 +25,7 @@
 
     //Term View Screen
     <string name="course_button">Courses</string>
+    <string name="make_term_active">Make Term Active</string>
     <string name="delete_term_button">Delete Term</string>
     <string name="view_term">View Term</string>
     <string name="edit_term_button">Edit Term</string>
@@ -55,7 +57,9 @@
     <string name="title_activity_course_view">CourseViewActivity</string>
 
     //Toast Messages
+    <string name="no_term_set">No Term has been Set!</string>
     <string name="term_saved">New Term Saved!</string>
+    <string name = "term_marked_active">Term Set To active!</string>
     <string name="term_updated"> Term Has been Updated</string>
     <string name="term_deleted"> Term Has been Deleted</string>
     <string name="courseAttached"> Course is attached, please delete courses first.</string>

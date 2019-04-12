@@ -18,8 +18,9 @@ public class DBOpenHelper extends SQLiteOpenHelper {
     public static final String TERM_NAME = "termName";
     public static final String TERM_START = "termStart";
     public static final String TERM_END = "termEnd";
+    public static final String TERM_ACTIVE ="termActive";
     public static final String TERM_CREATED = "termCreated";
-    public static final String[] TERMS_COLUMNS = {TERMS_TABLE_ID, TERM_NAME, TERM_START, TERM_END, TERM_CREATED};
+    public static final String[] TERMS_COLUMNS = {TERMS_TABLE_ID, TERM_NAME, TERM_START, TERM_END,TERM_ACTIVE, TERM_CREATED};
 
     // Terms Table Create Method
     private static final String TERMS_TABLE_CREATE =
@@ -28,6 +29,7 @@ public class DBOpenHelper extends SQLiteOpenHelper {
                     TERM_NAME + " TEXT, " +
                     TERM_START + " DATE, "+
                     TERM_END + " DATE, " +
+                    TERM_ACTIVE + " INTEGER, " +
                     TERM_CREATED + " TEXT default CURRENT_TIMESTAMP" +
                     ")";
 

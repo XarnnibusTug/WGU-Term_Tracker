@@ -29,7 +29,8 @@
         android:layout_height="58dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="61dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginBottom="73dp"
         android:onClick="openTermsList"
         android:text="@string/view_term_list"
         android:textSize="20sp" />
@@ -46,5 +47,16 @@
         android:layout_marginTop="0dp"
         android:contentDescription="@string/logo_description"
         app:srcCompat="@drawable/logo2" />
+
+    <Button
+        android:id="@+id/button11"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="11dp"
+        android:onClick="openCurrentTerm"
+        android:text="@string/current_term"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
 </RelativeLayout>

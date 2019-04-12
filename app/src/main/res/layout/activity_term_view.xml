@@ -78,4 +78,14 @@
         android:layout_marginBottom="62dp"
         android:onClick="editTermButton"
         android:text="@string/edit_term_button" />
+
+    <Button
+        android:id="@+id/button10"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="211dp"
+        android:onClick="markTermActive"
+        android:text="@string/make_term_active" />
 </RelativeLayout>

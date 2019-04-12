@@ -1,5 +1,6 @@
 package com.example.jmor132.myapplication;
 
+import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.AlarmManager;
 import android.content.Context;
@@ -26,7 +27,7 @@ import java.util.Date;
 public class CourseViewActivity extends AppCompatActivity {
 
     private static final int COURSE_NOTE_LIST_ACTIVITY_CODE = 11111;
-    private static final int ASSESSMENT_LIST_ADCTIVITY_CODE = 22222;
+    private static final int ASSESSMENT_LIST_ACTIVITY_CODE = 22222;
     private static final int COURSE_EDITOR_ACTIVITY_CODE = 33333;
 
     private Menu menu;
@@ -145,10 +146,11 @@ public class CourseViewActivity extends AppCompatActivity {
         Intent intent = new Intent(CourseViewActivity.this, AssessmentListActivity.class);
         Uri uri = Uri.parse(CourseProvider.COURSES_URI + "/" + courseID);
         intent.putExtra(CourseProvider.COURSE_CONTENT_TYPE, uri);
-        startActivityForResult(intent, ASSESSMENT_LIST_ADCTIVITY_CODE);
+        startActivityForResult(intent, ASSESSMENT_LIST_ACTIVITY_CODE);
     }
 
-    @TargetApi(Build.VERSION_CODES.N)
+
+    @SuppressLint("NewApi")
     private boolean enableNotifications(){
         long now = DateUtil.todayLong();
 
@@ -181,11 +183,24 @@ public class CourseViewActivity extends AppCompatActivity {
         course.notifications = 1;
         course.saveChange(this);
 
-        SharedPreferences sharedPreferences = getSharedPreferences(AlarmHandler.courseAlarm, Context.MODE_PRIVATE);
+
         Toast.makeText(this, getString(R.string.notificaitons_enabled), Toast.LENGTH_SHORT).show();
+        showMenuOptions();
         return true;
     }
 
+    private void showMenuOptions(){
+        SharedPreferences sharedPreferences = getSharedPreferences(AlarmHandler.courseAlarm, Context.MODE_PRIVATE);
+        menu.findItem(R.id.action_enable_notifications).setVisible(true);
+        menu.findItem(R.id.action_disable_notifications).setVisible(false);
+
+        if(course.notifications ==1 ){
+            menu.findItem(R.id.action_enable_notifications).setVisible(false);
+        }
+        else{
+            menu.findItem(R.id.action_disable_notifications).setVisible(false);
+        }
+    }
     private boolean disableNotifications(){
         course.notifications = 0;
         course.saveChange(this);

@@ -27,12 +27,14 @@ public class TermDataManager {
         String termName = cursor.getString(cursor.getColumnIndex(DBOpenHelper.TERM_NAME));
         String termStartDate = cursor.getString(cursor.getColumnIndex(DBOpenHelper.TERM_START));
         String termEndDate = cursor.getString(cursor.getColumnIndex(DBOpenHelper.TERM_END));
+        int termActive = cursor.getInt(cursor.getColumnIndex(DBOpenHelper.TERM_ACTIVE));
 
         Term term = new Term();
         term.termID = termID;
         term.termName = termName;
         term.termStart = termStartDate;
         term.termEnd = termEndDate;
+        term.active = termActive;
 
         return term;
     }

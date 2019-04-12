@@ -18,6 +18,7 @@ public class Term {
         values.put(DBOpenHelper.TERM_NAME, termName);
         values.put(DBOpenHelper.TERM_START, termStart);
         values.put(DBOpenHelper.TERM_END, termEnd);
+        values.put(DBOpenHelper.TERM_ACTIVE, active);
         context.getContentResolver().update(TermProvider.TERMS_URI, values, DBOpenHelper.TERMS_TABLE_ID + " = " + termID, null);
 
     }
